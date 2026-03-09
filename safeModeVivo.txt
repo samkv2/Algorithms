@@ -1,0 +1,213 @@
+
+
+
+safe mode boot in vivo phones how ?
+
+Booting a Vivo phone into Safe Mode lets the phone start without third-party apps, so you can check if a downloaded app is causing problems (lag, crashes, battery drain, etc.).
+
+Method 1 — Using the Power Button (works on most Vivo phones)
+Press and hold the Power button.
+
+When the Power off / Restart menu appears, press and hold “Power off.”
+
+A popup will appear asking “Reboot to Safe Mode?”
+
+Tap OK.
+
+The phone will restart in Safe Mode.
+
+You’ll see “Safe mode” written at the bottom corner of the screen after it boots.
+
+Method 2 — Using Hardware Buttons (if the phone is stuck)
+Turn the phone off completely.
+
+Press and hold the Power button until the Vivo logo appears.
+
+Immediately press and hold the Volume Down button.
+
+Keep holding it until the phone finishes booting.
+
+The device should start in Safe Mode.
+
+How to Exit Safe Mode
+Just restart the phone normally:
+
+Hold Power button → Restart.
+
+The phone will boot back to normal mode.
+
+✅ Tip: In Safe Mode, apps you installed from Play Store won’t run. If the phone works normally there, one of those apps is likely causing the issue.
+
+If you want, tell me:
+
+your Vivo model (for example **Vivo Y20, Vivo V29, etc.)
+
+and I can give the exact steps for that model.
+
+
+vivo y20A 2021
+
+Vivo Y20A (2021) – Booting into Safe Mode
+Method 1 (Easiest)
+Press and hold the Power button.
+
+The Power menu appears.
+
+Tap and hold “Power off.”
+
+A message will appear: Reboot to Safe Mode.
+
+Tap OK.
+
+The phone will restart and you’ll see “Safe mode” at the bottom of the screen.
+
+Method 2 (If the phone is lagging or stuck)
+Turn the phone off completely.
+
+Press and hold Power button.
+
+When the Vivo logo appears, immediately press and hold Volume Down.
+
+Keep holding until the phone finishes starting.
+
+It will start in Safe Mode.
+
+How to Exit Safe Mode
+Just restart the phone normally:
+
+Hold Power button → Restart.
+
+The phone will boot back to normal mode.
+
+💡 Why Safe Mode is useful
+
+Detect problematic apps
+
+Fix lag or crashes
+
+Check battery drain caused by apps
+
+If you want, I can also show:
+
+How to remove the app causing problems in Safe Mode
+
+How to fix Vivo phones stuck in Safe Mode.
+
+
+how can i with adb ?
+
+On the Vivo Y20A (2021), you can reboot into Safe Mode using ADB if USB debugging is enabled.
+
+1. Enable USB Debugging on the phone
+Go to Settings → About phone
+
+Tap Build number about 7 times to enable Developer Options
+
+Go to Settings → Developer options
+
+Turn on USB debugging
+
+2. Connect phone to PC
+Connect the phone with USB and check ADB connection:
+
+adb devices
+Your device should appear in the list.
+
+3. Reboot into Safe Mode
+Run this command:
+
+adb shell setprop persist.sys.safemode 1
+adb reboot
+The phone will restart into Safe Mode.
+
+4. Exit Safe Mode
+Run this command:
+
+adb shell setprop persist.sys.safemode 0
+adb reboot
+or simply restart the phone normally.
+
+Quick alternative (sometimes works on some Android builds)
+adb reboot safemode
+💡 Important
+
+USB debugging must already be enabled.
+
+Some Vivo / Funtouch OS versions block the safemode property, so the command might not work.
+
+If you want, I can also show 3 powerful ADB commands for Vivo phones (to remove bloatware, speed up the phone, and fix lag) that most users don’t know.
+
+
+go on
+
+On Vivo Y20A (2021) running **Android with Funtouch OS, ADB can help you clean the system and reduce lag without rooting the phone. Below are three practical commands that many people use.
+
+1. Remove Bloatware (without root)
+Many pre-installed apps run in the background and slow the phone.
+
+First list installed packages:
+
+adb shell pm list packages
+Then uninstall a specific system app for the current user:
+
+adb shell pm uninstall --user 0 package.name
+Example (removing a common Vivo app):
+
+adb shell pm uninstall --user 0 com.vivo.browser
+Important notes:
+
+This does not delete the app permanently, it only removes it for the current user.
+
+A factory reset restores it.
+
+Common packages people remove on Vivo devices:
+
+com.vivo.browser
+
+com.vivo.appstore
+
+com.vivo.game
+
+com.vivo.weather
+
+(Only remove apps you are sure about.)
+
+2. Reduce Animations (makes the phone feel faster)
+ADB can disable heavy animations:
+
+adb shell settings put global window_animation_scale 0
+adb shell settings put global transition_animation_scale 0
+adb shell settings put global animator_duration_scale 0
+This makes opening apps and switching screens much faster.
+
+To restore defaults:
+
+adb shell settings put global window_animation_scale 1
+adb shell settings put global transition_animation_scale 1
+adb shell settings put global animator_duration_scale 1
+3. Force Stop Problem Apps (fix lag or battery drain)
+If an app is misbehaving:
+
+adb shell am force-stop package.name
+Example:
+
+adb shell am force-stop com.facebook.katana
+This immediately kills the app and its background services.
+
+✅ Tip: You can also see which apps are draining resources:
+
+adb shell dumpsys batterystats
+or check running processes:
+
+adb shell top
+💡 If you want, I can also show:
+
+10 safe Vivo bloatware packages you can remove
+
+ADB commands to increase battery life
+
+A trick to unlock hidden settings in Funtouch OS.
+
+
+
+
